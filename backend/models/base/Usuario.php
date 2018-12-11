@@ -45,7 +45,7 @@ abstract class Usuario extends \yii\db\ActiveRecord
             [['Nombre', 'Apellido_M', 'Apellido_P', 'Correo', 'Especialidad'], 'string'],
             [['Contacto_T', 'Activo'], 'integer'],
             [['Sexo'], 'string', 'max' => 1],
-            [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => \backend\models\User::className(), 'targetAttribute' => ['id_usuario' => 'id']]
+            [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\User::className(), 'targetAttribute' => ['id_usuario' => 'id']]
         ];
     }
 
@@ -70,9 +70,9 @@ abstract class Usuario extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUsuario()
+    public function getRelUsuario()
     {
-        return $this->hasOne(\backend\models\User::className(), ['id' => 'id_usuario']);
+        return $this->hasOne(\common\models\User::className(), ['id' => 'id_usuario']);
     }
 
 

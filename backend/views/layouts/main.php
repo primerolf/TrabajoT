@@ -41,6 +41,12 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label'=> 'Avistamientos', 'url' => ['crud/avistamiento']];
+        $menuItems[] = ['label'=> 'Climas', 'url' => ['crud/clima']];
+        $menuItems[] = ['label'=> 'Regiones', 'url' => ['crud/regione']];
+        $menuItems[] = ['label'=> 'Taxonomias', 'url' => ['crud/taxonomium']];
+        $menuItems[] = ['label'=> 'Terrenos', 'url' => ['crud/terreno']];
+        $menuItems[] = ['label'=> 'Usuarios', 'url' => ['crud/usuario']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(

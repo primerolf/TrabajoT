@@ -8,6 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'name'=>'ChaoUniversidad - v1',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -44,6 +45,18 @@ return [
             ],
         ],
         */
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class'          => 'yii\i18n\PhpMessageSource',
+                    'basePath'       => '@app/messages', // if advanced application, set @frontend/messages
+                    'sourceLanguage' => 'en',
+                    'fileMap'        => [
+                        //'main' => 'main.php',
+                    ],
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
